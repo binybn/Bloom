@@ -7,6 +7,9 @@ body {
   font-weight: bold;
   font-size: 2ex;
   font-family: Arial, Helvetica, sans-serif;
+  background-image: url("https://cdn.pixabay.com/photo/2017/06/27/07/51/sakura-2446572_1280.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header {
@@ -21,9 +24,9 @@ header {
   background-color: skyblue;
   font-size: 30px;
   font-weight: bold;
-  color: hotpink;
-  opacity: 0.5;
-  backdrop-filter: blur(50px);
+  color: white;
+  opacity: 0.7;
+  backdrop-filter: blur(30px);
 }
 header > div {
   padding-left: 10%;
@@ -38,7 +41,7 @@ footer {
   left: 0;
   right: 0;
   width: 100%;
-  bottom: 2%;
+  bottom: 0%;
   background-color: green;
   color: white;
   opacity: 0.5;
@@ -55,6 +58,9 @@ nav {
   left: 50%;
   top: 70%;
   transform: translate(-50%, -50%);
+
+  width: 100%;
+  height: 100%;
 }
 
 #MainContent {
@@ -74,3 +80,42 @@ section > div {
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+/* 벚꽃 */
+.cherry_blossom {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("sakura.png") center center no-repeat;
+  background-size: cover;
+  perspective: 1000px;
+}
+
+.cherry_blossom .petal {
+  position: absolute;
+  background: linear-gradient(-45deg, #ffb6c1 0%, #ffc5d0 40%, #ffdfe6 80%);
+  border-radius: 10% 50% 40% 50%;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transform-style: preserve-3d;
+  transition: transform 1000ms linear;
+}
+
+@keyframes fall {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0.2;
+  }
+}
+/* 벚꽃 */
